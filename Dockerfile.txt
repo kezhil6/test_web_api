@@ -1,5 +1,5 @@
 # Use official .NET runtime image for building
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0.100 AS build
 WORKDIR /app
 
 # Copy csproj and restore dependencies
@@ -19,4 +19,5 @@ COPY --from=build /app/out ./
 EXPOSE 5000
 
 # Start the application
-ENTRYPOINT ["dotnet", "YourProjectName.dll"]
+ENTRYPOINT ["dotnet", "test.dll"]
+
